@@ -1,0 +1,20 @@
+<div class="jumbotron">
+  <h1 class="display-4"><%= @unit.name %></h1>
+  <p class="lead"><%= @unit.symbol %></p>
+  <hr class="my-4">
+  <%= link_to t('button.edit_model', model: t('activerecord.models.unit.one')), edit_unit_path(@unit), class: "btn btn-outline-info btn-lg btn-block" %>
+  <%= link_to t('button.back_to_all'), units_path, class: "btn btn-outline-primary btn-lg btn-block" %>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title"><%= t 'activerecord.models.unit_conversion.other' %></h5>
+    <div class="row">
+      <%= render partial: "unit_conversions/unit_conversion",
+                 collection: @unit.unit_conversions,
+                 as: :unit_conversion,
+                 locals: {count: @unit.unit_conversions.length}
+      %>
+    </div>
+  </div>
+</div>

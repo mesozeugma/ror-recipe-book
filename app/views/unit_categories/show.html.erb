@@ -1,0 +1,25 @@
+<div class="jumbotron">
+  <h1 class="display-4"><%= @unit_category.name %></h1>
+  <hr class="my-4">
+  <%= link_to t('button.edit_model', model: t('activerecord.models.unit_category.one')), edit_unit_category_path(@unit_category), class: "btn btn-outline-info btn-lg btn-block" %>
+  <%= link_to t('button.back_to_all'), unit_categories_path, class: "btn btn-outline-primary btn-lg btn-block" %>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title"><%= t 'activerecord.models.unit_conversion.other' %></h5>
+    <div class="row">
+      <%= render partial: "unit_conversions/unit_conversion",
+                 collection: @unit_category.unit_conversions,
+                 as: :unit_conversion,
+                 locals: {count: @unit_category.unit_conversions.length}
+      %>
+    </div>
+  </div>
+  <div class="card-footer">
+    <%= link_to t('button.new_model', model: t('activerecord.models.unit_conversion.one')),
+                new_unit_category_unit_conversion_path(@unit_category),
+                class: "btn btn-outline-primary"
+    %>
+  </div>
+</div>

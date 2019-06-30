@@ -1,0 +1,18 @@
+<div class="jumbotron">
+  <h1 class="display-4"><%= @ingredient.name %></h1>
+  <p class="lead"><%= @ingredient.unit_conversion.to_label %></p>
+  <hr class="my-4">
+  <% if current_user.try(:admin?) %>
+    <%= link_to t('button.edit_model', model: t('activerecord.models.ingredient.one')), edit_ingredient_path(@ingredient), class: "btn btn-outline-info btn-lg btn-block" %>
+  <% end %>
+  <%= link_to t('button.back_to_all'), ingredients_path, class: "btn btn-outline-primary btn-lg btn-block" %>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title"><%= t 'activerecord.models.recipe.other' %></h5>
+    <div class="row">
+      <%= render partial: "recipes/recipe", collection: @ingredient.recipes, as: :recipe %>
+    </div>
+  </div>
+</div>

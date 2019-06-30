@@ -1,0 +1,9 @@
+<div class="jumbotron">
+  <h1 class="display-4"><%= t 'activerecord.models.unit.other' %></h1>
+  <hr class="my-4">
+  <%= link_to t('button.new_model', model: t('activerecord.models.unit.one')), new_unit_path, class: "btn btn-outline-primary btn-lg btn-block" %>
+</div>
+
+<div class="row">
+  <%= render @units %>
+</div>

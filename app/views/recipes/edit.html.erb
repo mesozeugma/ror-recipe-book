@@ -1,0 +1,16 @@
+<div class="jumbotron">
+  <h1 class="display-4"><%= t 'title.edit', model: t('activerecord.models.recipe.one') %></h1>
+  <hr class="my-4">
+  <%= link_to t('button.show_model', model: t('activerecord.models.recipe.one')), @recipe, class: "btn btn-outline-info btn-lg btn-block" %>
+  <% if current_user == @recipe.user || current_user.try(:admin?) %>
+    <%= link_to t('button.delete_model', model: t('activerecord.models.recipe.one')),
+                @recipe,
+                method: :delete,
+                data: {confirm: t('other.delete_confirm')},
+                class: 'btn btn-outline-danger btn-lg btn-block'
+    %>
+  <% end %>
+  <%= link_to t('button.back_to_all'), recipes_path, class: "btn btn-outline-primary btn-lg btn-block" %>
+</div>
+
+<%= render 'form', recipe: @recipe %>

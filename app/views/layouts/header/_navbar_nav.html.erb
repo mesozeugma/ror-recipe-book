@@ -1,0 +1,26 @@
+<ul class="navbar-nav mr-auto">
+  <%= render "layouts/header/link", name: t('activerecord.models.recipe.other'), path: recipes_path %>
+  <%= render "layouts/header/link", name: t('activerecord.models.ingredient.other'), path: ingredients_path %>
+
+  <% if current_user.try(:admin) %>
+    <%= render "layouts/header/dropdown", name: t('button.other') do %>
+      <%= link_to t('activerecord.models.unit.other'), units_path, class: "dropdown-item" %>
+      <%= link_to t('activerecord.models.unit_category.other'), unit_categories_path, class: "dropdown-item" %>
+    <% end %>
+  <% end %>
+</ul>
+
+<ul class="nav navbar-nav navbar-right">
+  <%= render "layouts/header/dropdown", name: I18n.locale.upcase do %>
+    <%= link_to "EN", root_path(locale: 'en'), class: "dropdown-item" %>
+    <%= link_to "HU", root_path(locale: 'hu'), class: "dropdown-item" %>
+  <% end %>
+  <% if user_signed_in? %>
+    <li class="nav-item">
+      <%= link_to t('devise.sessions.destroy.sign_out'), destroy_user_session_path, method: :delete, class: "nav-link" %>
+    </li>
+  <% else %>
+    <%= render "layouts/header/link", name: t('devise.sessions.new.sign_in'), path: new_user_session_path %>
+    <%= render "layouts/header/link", name: t('devise.registrations.new.sign_up'), path: new_user_registration_path %>
+  <% end %>
+</ul>

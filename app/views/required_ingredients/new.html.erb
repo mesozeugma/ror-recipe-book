@@ -1,0 +1,12 @@
+<div class="jumbotron">
+  <h1 class="display-4"><%= t 'button.new_model', model: t('activerecord.models.required_ingredient.one') %></h1>
+  <p class="lead"><%= @recipe.name %></p>
+  <hr class="my-4">
+  <%= link_to t('button.back'), @recipe, class: "btn btn-outline-primary btn-lg btn-block" %>
+</div>
+
+<%= render 'form',
+           required_ingredient: @recipe.required_ingredients.new,
+           url: recipe_required_ingredients_path(@recipe),
+           edit: false
+%>

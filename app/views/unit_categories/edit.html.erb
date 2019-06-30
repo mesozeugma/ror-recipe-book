@@ -1,0 +1,16 @@
+<div class="jumbotron">
+  <h1 class="display-4"><%= t 'title.edit', model: t('activerecord.models.unit_category.one') %></h1>
+  <hr class="my-4">
+  <%= link_to t('button.show_model', model: t('activerecord.models.unit_category.one')), @unit_category, class: "btn btn-outline-info btn-lg btn-block" %>
+  <% if @unit_category.destroyable? %>
+    <%= link_to t('button.delete_model', model: t('activerecord.models.unit_category.one')),
+                @unit_category,
+                method: :delete,
+                data: {confirm: t('other.delete_confirm')},
+                class: 'btn btn-outline-danger btn-lg btn-block'
+    %>
+  <% end %>
+  <%= link_to t('button.back_to_all'), unit_categories_path, class: "btn btn-outline-primary btn-lg btn-block" %>
+</div>
+
+<%= render 'form', unit_category: @unit_category %>

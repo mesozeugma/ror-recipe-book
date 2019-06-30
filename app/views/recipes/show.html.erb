@@ -1,0 +1,33 @@
+<div class="jumbotron">
+  <h1 class="display-4"><%= @recipe.name %></h1>
+  <p class="lead"><%= @recipe.user.name %></p>
+  <hr class="my-4">
+  <% if current_user == @recipe.user || current_user.try(:admin?) %>
+    <%= link_to t('button.edit_model', model: t('activerecord.models.recipe.one')), edit_recipe_path(@recipe), class: "btn btn-outline-info btn-lg btn-block" %>
+  <% end %>
+  <%= link_to t('button.back_to_all'), recipes_path, class: "btn btn-outline-primary btn-lg btn-block" %>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title"><%= t 'activerecord.models.required_ingredient.other' %></h5>
+    <div class="row">
+      <%= render partial: "required_ingredients/required_ingredient",
+                 collection: @recipe.required_ingredients,
+                 as: :required_ingredient
+      %>
+    </div>
+  </div>
+  <% if current_user == @recipe.user || current_user.try(:admin?) %>
+    <div class="card-footer">
+      <%= link_to t('button.new_model', model: t('activerecord.models.required_ingredient.one')), new_recipe_required_ingredient_path(@recipe), class: "btn btn-outline-primary" %>
+    </div>
+  <% end %>
+</div>
+
+<div class="card" style="margin-top: 16px;">
+  <div class="card-body">
+    <h5 class="card-title"><%= t 'activerecord.attributes.recipe.description' %></h5>
+    <p class="card-text"><%= @recipe.description %></p>
+  </div>
+</div>

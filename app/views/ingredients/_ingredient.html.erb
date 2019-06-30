@@ -1,0 +1,24 @@
+<div class="col-sm-4" style="padding: 15px;">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">
+        <%= link_to ingredient.name, ingredient %>
+        <span class="badge badge-primary"><%= ingredient.required_ingredients_count %></span>
+      </h5>
+      <h6 class="card-subtitle mb-2 text-muted"><%= ingredient.unit_conversion.to_label %></h6>
+    </div>
+    <% if current_user.try(:admin?) %>
+      <div class="card-footer">
+        <%= link_to t('button.edit'), edit_ingredient_path(ingredient), class: "btn btn-outline-secondary" %>
+        <% if ingredient.destroyable? %>
+          <%= link_to t('button.delete'),
+                      ingredient,
+                      method: :delete,
+                      data: {confirm: t('other.delete_confirm')},
+                      class: 'btn btn-outline-danger'
+          %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

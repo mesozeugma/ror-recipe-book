@@ -1,0 +1,11 @@
+<div class="jumbotron">
+  <h1 class="display-4"><%= t 'activerecord.models.recipe.other' %></h1>
+  <% if current_user %>
+    <hr class="my-4">
+    <%= link_to t('button.new_model', model: t('activerecord.models.recipe.one')), new_recipe_path, class: "btn btn-outline-primary btn-lg btn-block" %>
+  <% end %>
+</div>
+
+<div class="row">
+  <%= render partial: "recipe", collection: @recipes, as: :recipe %>
+</div>

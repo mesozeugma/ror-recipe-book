@@ -1,0 +1,24 @@
+<div class="col-sm-4" style="padding: 15px;">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><%= "#{unit_conversion.unit.name} (#{unit_conversion.unit.symbol})" %></h5>
+      <h6 class="card-subtitle mb-2 text-muted">
+        <%= unit_conversion.rate.zero? ? t('other.base_unit') : unit_conversion.rate %>
+      </h6>
+    </div>
+    <div class="card-footer">
+      <%= link_to t('button.edit'),
+                  edit_unit_category_unit_conversion_path(unit_conversion.unit_category, unit_conversion),
+                  class: "btn btn-outline-secondary"
+      %>
+      <% if unit_conversion.destroyable?(count) %>
+        <%= link_to t('button.delete'),
+                    unit_category_unit_conversion_path(unit_conversion.unit_category, unit_conversion),
+                    method: :delete,
+                    data: {confirm: t('other.delete_confirm')},
+                    class: 'btn btn-outline-danger'
+        %>
+      <% end %>
+    </div>
+  </div>
+</div>

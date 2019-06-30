@@ -1,0 +1,18 @@
+<div class="jumbotron">
+  <h1 class="display-4"><%= t 'title.edit', model: t('activerecord.models.required_ingredient.one') %></h1>
+  <p class="lead"><%= @recipe.name %></p>
+  <hr class="my-4">
+    <%= link_to t('button.delete_model', model: t('activerecord.models.required_ingredient.one')),
+                recipe_required_ingredient_path(@recipe, @required_ingredient),
+                method: :delete,
+                data: {confirm: t('other.delete_confirm')},
+                class: 'btn btn-outline-danger btn-lg btn-block'
+    %>
+  <%= link_to t('button.back'), @recipe, class: "btn btn-outline-primary btn-lg btn-block" %>
+</div>
+
+<%= render 'form',
+           required_ingredient: @required_ingredient,
+           url: recipe_required_ingredient_path(@recipe, @required_ingredient),
+           edit: true
+%>

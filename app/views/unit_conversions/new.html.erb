@@ -1,0 +1,8 @@
+<div class="jumbotron">
+  <h1 class="display-4"><%= t 'button.new_model', model: t('activerecord.models.unit_conversion.one') %></h1>
+  <p class="lead"><%= @unit_category.name %></p>
+  <hr class="my-4">
+  <%= link_to t('button.back'), @unit_category, class: "btn btn-outline-primary btn-lg btn-block" %>
+</div>
+
+<%= render 'form', edit: false %>

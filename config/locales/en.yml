@@ -1,0 +1,66 @@
+en:
+  activerecord:
+    models:
+      ingredient:
+        one: 'Ingredient'
+        other: 'Ingredients'
+      recipe:
+        one: 'Recipe'
+        other: 'Recipes'
+      required_ingredient:
+        one: 'Required Ingredient'
+        other: 'Required Ingredients'
+      unit:
+        one: 'Unit'
+        other: 'Units'
+      unit_category:
+        one: 'Unit Category'
+        other: 'Unit Categories'
+      unit_conversion:
+        one: 'Unit Conversion'
+        other: 'Unit Conversions'
+      user:
+        one: 'User'
+        other: 'Users'
+
+  alert:
+    access_denied: "Access dined."
+    create: '%{model} was successfully created.'
+    create_fail: 'Failed to create %{model}'
+    destroy: '%{model} was successfully deleted.'
+    destroy_fail: 'Failed to delete %{model}'
+    update: '%{model} was successfully updated.'
+    update_fail: 'Failed to update %{model}'
+
+  button:
+    back: 'Back'
+    back_to_all: 'Back to all'
+    delete: 'Delete'
+    delete_model: 'Delete %{model}'
+    edit: 'Edit'
+    edit_model: 'Edit %{model}'
+    new: 'New'
+    new_model: 'New %{model}'
+    other: 'Other'
+    show: 'Show'
+    show_model: 'Show %{model}'
+
+  devise:
+    sessions:
+      destroy:
+        sign_out: 'Sign out'
+
+  errors:
+    messages:
+      category_base_unit_already_exists: 'Category base unit already exists'
+      category_base_unit_delete: 'Category base unit can not be deleted if other conversions exists for the category'
+      category_base_unit_not_exists: 'Category base unit must exists'
+      different_unit_category: 'Unit Category must be same as before'
+
+  other:
+    base_unit: 'Base Unit'
+    delete_confirm: 'Are you sure you want to delete this item?'
+
+  title:
+    application: 'Recipe Book'
+    edit: 'Editing %{model}'

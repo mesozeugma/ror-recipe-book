@@ -1,0 +1,93 @@
+hu:
+  activerecord:
+    attributes:
+      ingredient:
+        name: 'Név'
+        unit_conversion: 'Mértékegység Konverzió'
+      recipe:
+        description: 'Leírás'
+        name: 'Név'
+      required_ingredient:
+        ingredient: 'Hozzávaló'
+        amount: 'Mennyiség'
+      unit:
+        name: 'Név'
+        symbol: 'Jel'
+      unit_conversion:
+        rate: 'Váltószám'
+        unit: 'Mértékegység'
+      unit_category:
+        name: 'Név'
+      user:
+        name: 'Név'
+    models:
+      ingredient:
+        one: 'Hozzávaló'
+        other: 'Hozzávalók'
+      recipe:
+        one: 'Recept'
+        other: 'Receptek'
+      required_ingredient:
+        one: 'Szükséges Hozzávaló'
+        other: 'Szükséges Hozzávalók'
+      unit:
+        one: 'Mértékegység'
+        other: 'Mértékegységek'
+      unit_category:
+        one: 'Mértékegység Kategória'
+        other: 'Mértékegység Kategóriák'
+      unit_conversion:
+        one: 'Mértékegység Konverzió'
+        other: 'Mértékegység Konverziók'
+      user:
+        one: 'Felhasználó'
+        other: 'Felhasználók'
+
+  alert:
+    access_denied: "Hozzáférés megtagadva."
+    create: '%{model} létrehozva.'
+    create_fail: 'Sikertelen %{model} létrehozás.'
+    destroy: '%{model} törölve.'
+    destroy_fail: 'Sikertelen %{model} törlés.'
+    update: '%{model} módosítva.'
+    update_fail: 'Sikertelen %{model} módosítás.'
+
+  button:
+    back: 'Vissza'
+    back_to_all: 'Vissza az összesre'
+    delete: 'Törlés'
+    delete_model: '%{model} törlése'
+    edit: 'Szerkesztés'
+    edit_model: '%{model} szekesztése'
+    new: 'Új'
+    new_model: 'Új %{model}'
+    other: 'Egyéb'
+    show: 'Mutat'
+    show_model: '%{model} mutatása'
+
+  devise:
+    failure:
+      invalid: 'Helytelen %{authentication_keys} vagy jelszó.'
+      not_found_in_database: 'Helytelen %{authentication_keys} vagy jelszó.'
+    sessions:
+      destroy:
+        sign_out: 'Kijelentkezés'
+    shared:
+      minimum_password_length:
+        one: 'Minimum %{count} hosszú'
+        other: 'Minimum %{count} hosszú'
+
+  errors:
+    messages:
+      category_base_unit_already_exists: 'Kategória alap mértékegysége már létezik'
+      category_base_unit_delete: 'Kategória alap mértékegysége nem törölhető, amíg létezik más konverzió is a kategóriában'
+      category_base_unit_not_exists: 'Kategória alap mértékegységének léteznie kell'
+      different_unit_category: 'Mértéegység Kategóriának meg kell egyeznie a korábbival'
+
+  other:
+    base_unit: 'Alap Mértékegység'
+    delete_confirm: 'Biztos, hogy törölni akarja ezt az elemet?'
+
+  title:
+    application: 'Receptkönyv'
+    edit: '%{model} szerkesztése'
